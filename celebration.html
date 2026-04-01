@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Celebration 🎉</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #500101, #f31f34);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial;
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        .cake {
+            font-size: 80px;
+            margin: 20px 0;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-20px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #fff;
+            color: #ff4d6d;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>🎉 Yay! You clicked YES 🎉</h1>
+        <div class="cake">🎂</div>
+        <p>Kill Me! </p>
+
+        <button onclick="goBack()">Go Back</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+</html>

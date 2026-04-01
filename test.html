@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yes / No Interaction</title>
+
+    <style>
+        body {
+            text-align: center;
+            margin-top: 100px;
+            font-family: Arial;
+            background-color: #111;
+            color: white;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        #yesBtn {
+            background-color: #28a745;
+        }
+
+        #noBtn {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Do you hate me? 🥹</h1>
+
+    <button id="yesBtn" onclick="goToCelebration()" class="btn">Yes</button>
+    <button id="noBtn" class="btn">No</button>
+
+    <script>
+        function goToCelebration() {
+            window.location.href = "celebration.html";
+        }
+        let noClickCount = 0;
+        let yesSize = 16;
+
+        document.getElementById("noBtn").addEventListener("click", function() {
+            noClickCount++;
+
+            let yesBtn = document.getElementById("yesBtn");
+
+            // Increase YES button size
+            yesSize += 5;
+            yesBtn.style.fontSize = yesSize + "px";
+            yesBtn.style.padding = yesSize + "px " + (yesSize * 2) + "px";
+
+            // Remove NO button after 3 clicks
+            if (noClickCount >= 5) {
+                document.getElementById("noBtn").style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>
